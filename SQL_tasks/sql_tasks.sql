@@ -25,7 +25,7 @@ JOIN countries ON country_id = id_country
 
 /* Найти страны, в которых в топ-10 по зарплатам женщин больше , чем мужчин */
 
-SELECT name_country AS "Страны, где женщины по топ зарплатам"
+SELECT name_country AS country_top_women
 FROM (
     SELECT 
         country_id, 
@@ -39,7 +39,7 @@ WHERE women > men;
 
 /* Найти страны, в которых используются не все возможные типы карт */
 
-SELECT name_country AS "Страны, где не все типы карт"
+SELECT name_country AS country_not_all_types
 FROM countries
 WHERE id_country NOT IN (
     SELECT DISTINCT country_id
